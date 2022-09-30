@@ -1,0 +1,15 @@
+AttributeError in line 35 of /home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile:
+'Checkpoints' object has no attribute 'lima_demultiplex'
+  File "/home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile", line 39, in <module>
+  File "/home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile", line 40, in <listcomp>
+  File "/home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile", line 35, in checkpoint_lima_demultiplex
+AttributeError in line 35 of /home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile:
+'Checkpoints' object has no attribute 'lima_demultiplex'
+  File "/home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile", line 39, in <module>
+  File "/home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile", line 40, in <listcomp>
+  File "/home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile", line 35, in checkpoint_lima_demultiplex
+AttributeError in line 35 of /home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile:
+'Checkpoints' object has no attribute 'lima_demultiplex'
+  File "/home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile", line 39, in <module>
+  File "/home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile", line 40, in <listcomp>
+  File "/home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile", line 35, in checkpoint_lima_demultiplex

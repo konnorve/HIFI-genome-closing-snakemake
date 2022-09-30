@@ -1,0 +1,6 @@
+SyntaxError in line 74 of /home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile:
+'(' was never closed
+SyntaxError in line 74 of /home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile:
+'(' was never closed
+SyntaxError in line 74 of /home/kve/scripts/HIFI-genome-closing-snakemake/workflow/Snakefile:
+'(' was never closed
