@@ -1,0 +1,2 @@
+SyntaxError in line 59 of /home/kve/scripts/HIFI-genome-closing-snakemake/Snakefile:
+Expected name or colon after rule or checkpoint keyword. (Snakefile, line 59)
