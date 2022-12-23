@@ -1,18 +1,21 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=PBsmk
-#SBATCH --time 10-0                         # wall clock limit
-#SBATCH --partition sched_mit_chisholm      # partition selection
-#SBATCH -N 2                                # nodes
-#SBATCH -n 40                               # tasks (essentially threads)
-#SBATCH --mem 250G                          # memory
-#SBATCH -o logs/runs/%j_slurm_output.txt
-#SBATCH -e logs/runs/%j_slurm_error.txt
+#SBATCH --time 20-0                         # wall clock limit
+#SBATCH -p sched_mit_chisholm               # partition selection
+#SBATCH -n 1                                # tasks (essentially threads)
+#SBATCH -o logs/%j.out
+#SBATCH -e logs/%j.err
 
 source activate snakemake
 
-# lints and formats snakefile
-snakemake --unlock
-snakemake --lint
+snakemake -s workflow/Snakefile --unlock --configfile "config.yaml"
 
 # run job:
-snakemake --cores all --resources mem_mb=500000 --use-conda --conda-frontend conda --rerun-incomplete --keep-going
+snakemake \
+    --configfile "config.yaml" \
+    -s workflow/Snakefile \
+    --use-conda \
+    --slurm \
+    --rerun-incomplete \
+    --jobs 10
+    # --keep-going

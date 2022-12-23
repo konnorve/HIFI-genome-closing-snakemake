@@ -1,8 +1,18 @@
 from pathlib import Path
+# from types import SimpleNamespace
+# import yaml
 
 configfile: "config.yaml"
 
+benchmark_dir = Path(config['benchmark directory'])
+benchmark_dir.mkdir(exist_ok=True)
+
+log_dir = Path(config["logging directory"])
+log_dir.mkdir(exist_ok=True)
+
 scratch_dir = Path(config["scratch directory"])
+results_dir = Path(config["results directory"])
+
 scratch_dict = {
     "pacbio": scratch_dir / '1_pacbio_reqs',
     "lima demul": scratch_dir / '2_subreadset_demul',
@@ -23,12 +33,53 @@ scratch_dict = {
     "kaiju": scratch_dir / '6_kaiju'
 }
 
-results_dir = Path(config["results directory"])
 results_dict = {
     "all assemblies": results_dir / 'all_methods_all_assemblies',
     "circular assemblies": results_dir / 'all_circ_assemblies',
     "reports": results_dir / 'reports',
 }
+
+
+# with open(config['resources path']) as f:
+#     resource_options = yaml.safe_load(f)
+
+# def get_resources(group, rule, resource_selection=None, wildcards=None):
+#     if resource_selection:
+#         assert resource_selection in resource_options.keys()
+#         resources = resource_options[resource_selection]
+#     else:
+#         resources = resource_options['default']
+#     if wildcards and len(wildcards) > 0:
+#         out = log_dir / group / rule / f"{'.'.join(wildcards).replace(' ','_')}.out"
+#         err = log_dir / group / rule / f"{'.'.join(wildcards).replace(' ','_')}.err"
+#     else:
+#         out = log_dir / group / f"{rule}.out"
+#         err = log_dir / group / f"{rule}.err"
+
+#     out.parent.mkdir(parents=True, exist_ok=True)
+#     err.parent.mkdir(parents=True, exist_ok=True)
+
+#     resources['output'] = str(out)
+#     resources['error'] = str(err)
+
+#     return SimpleNamespace(**resources)
+
+def mk_out(group, rule, wildcards=None):
+    if wildcards:
+        p = logging / group / rule / f"{'.'.join(wildcards).replace(' ', '.')}.out"
+    else:
+        p = logging / group / f"{rule}.out"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    return str(p)
+
+def mk_err(group, rule, wildcards=None):
+    if wildcards:
+        p = logging / group / rule / f"{'.'.join(wildcards).replace(' ', '.')}.err"
+    else:
+        p = logging / group / f"{rule}.err"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    return str(p)
+
 
 all_files = [
     scratch_dict["lima demul"] / batch / str(run) / f"lima.{barcode}.bam"

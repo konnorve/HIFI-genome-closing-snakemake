@@ -1,9 +1,10 @@
 
-#TODO implement cross machine smrttools
-# smrttools bin path: /home/kve/bin/smrtlink/smrtcmds/bin
 barcodes: /nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/analysis/raw_barcodes/Sequel_384_barcodes_v1.fasta
 scratch directory: /nobackup1/chisholmlab/kve/2021_HIFI_Genome_Closing_Project
 results directory: /nfs/chisholmlab001/kve/2021_HIFI_Genome_Closing_Project/snakemake
+logging directory: /nfs/chisholmlab001/kve/2021_HIFI_Genome_Closing_Project/snakemake_logs
+benchmark directory: benchmark
+resources path: resources.yaml
 
 #TODO implement assembler usage
 # assemble using:
@@ -25,19 +26,19 @@ sequencing runs:
   211012Chi:  # batch 3
     seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/211012Chi/m54030R1_211109_170303.subreadset.xml']
     barcodes: ["bc1001", "bc1002", "bc1003", "bc1008", "bc1009", "bc1010", "bc1011", "bc1012"]
-  211022Chi:  # batch 4
-    seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/211022Chi/m54030R1_211115_203033.subreadset.xml']
-    barcodes: ["bc1015", "bc1016", "bc1017", "bc1018", "bc1019", "bc1020", "bc1021", "bc1022"]
-  211029Chi:  # batch 5
-    seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/211029Chi/m54030R1_211124_203007.subreadset.xml']
-    barcodes: ["bc1001", "bc1002", "bc1003", "bc1008", "bc1009", "bc1010", "bc1011", "bc1012"]
-  220608Chi:  # batch 6
-    seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/220608Chi/raw/1_A01/m54030R1_220617_175819.subreadset.xml']
-    barcodes: ["bc1010", "bc1011", "bc1012", "bc1015", "bc1016", "bc1017", "bc1018", "bc1019"]
-  220718Chi:  # batch 7
-    seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/220718Chi/raw/1_A01/m54030R1_220728_180547.subreadset.xml']
-    barcodes: ["bc1015", "bc1016", "bc1017", "bc1018", "bc1019", "bc1020", "bc1021", "bc1022"]
-  220826Chi:  # batch 8
-    seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/220826Chi/raw1/1_A01/m54030R1_220913_203955.subreadset.xml',
-                '/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/220826Chi/raw2/1_A01/m54030R1_220923_142224.subreadset.xml']
-    barcodes: ["bc1001", "bc1002", "bc1003", "bc1008", "bc1009", "bc1010", "bc1011", "bc1012"]
+  # 211022Chi:  # batch 4
+  #   seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/211022Chi/m54030R1_211115_203033.subreadset.xml']
+  #   barcodes: ["bc1015", "bc1016", "bc1017", "bc1018", "bc1019", "bc1020", "bc1021", "bc1022"]
+  # 211029Chi:  # batch 5
+  #   seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/211029Chi/m54030R1_211124_203007.subreadset.xml']
+  #   barcodes: ["bc1001", "bc1002", "bc1003", "bc1008", "bc1009", "bc1010", "bc1011", "bc1012"]
+  # 220608Chi:  # batch 6
+  #   seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/220608Chi/raw/1_A01/m54030R1_220617_175819.subreadset.xml']
+  #   barcodes: ["bc1010", "bc1011", "bc1012", "bc1015", "bc1016", "bc1017", "bc1018", "bc1019"]
+  # 220718Chi:  # batch 7
+  #   seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/220718Chi/raw/1_A01/m54030R1_220728_180547.subreadset.xml']
+  #   barcodes: ["bc1015", "bc1016", "bc1017", "bc1018", "bc1019", "bc1020", "bc1021", "bc1022"]
+  # 220826Chi:  # batch 8
+  #   seq_files: ['/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/220826Chi/raw1/1_A01/m54030R1_220913_203955.subreadset.xml',
+  #               '/nfs/chisholmlab001/chisholmlab/experiment_repository/2021/HIFI_Genome_Closing_Project/220826Chi/raw2/1_A01/m54030R1_220923_142224.subreadset.xml']
+  #   barcodes: ["bc1001", "bc1002", "bc1003", "bc1008", "bc1009", "bc1010", "bc1011", "bc1012"]
